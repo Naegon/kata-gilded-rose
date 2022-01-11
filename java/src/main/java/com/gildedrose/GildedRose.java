@@ -22,9 +22,7 @@ class GildedRose {
                 default -> item.quality = decrementQuality(item);
             }
 
-            if (!item.name.equals(SULFURAS)) {
-                item.sellIn = item.sellIn - 1;
-            }
+            item.sellIn = decrementSellIn(item);
 
             if (item.sellIn < 0) {
                 if (item.name.equals(AGED_BRIE)) {
@@ -42,6 +40,10 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    static int decrementSellIn(Item item) {
+        return item.name.equals(SULFURAS)? item.sellIn : item.sellIn -1;
     }
 
     static int decrementQuality(Item item) {

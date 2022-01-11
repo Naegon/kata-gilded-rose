@@ -121,6 +121,42 @@ class GildedRoseTest {
     }
 
     @Test
+    public void decrementSellIn_Test() {
+        // Given
+        Item mongooseElixir = new Item(MONGOOSE_ELIXIR, 5, 25);
+
+        // When
+        mongooseElixir.sellIn = decrementSellIn(mongooseElixir);
+
+        // Then
+        assertEquals(4, mongooseElixir.sellIn);
+    }
+
+    @Test
+    public void decrementSellIn_TestWithExpiredItem() {
+        // Given
+        Item mongooseElixir = new Item(MONGOOSE_ELIXIR, 0, 25);
+
+        // When
+        mongooseElixir.sellIn = decrementSellIn(mongooseElixir);
+
+        // Then
+        assertEquals(-1, mongooseElixir.sellIn);
+    }
+
+    @Test
+    public void decrementSellIn_TestWithSulfuras() {
+        // Given
+        Item sulfuras = new Item(SULFURAS, 5, 25);
+
+        // When
+        sulfuras.sellIn = decrementSellIn(sulfuras);
+
+        // Then
+        assertEquals(5, sulfuras.sellIn);
+    }
+
+    @Test
     public void goldenMaster() throws IOException {
         Item[] items = new Item[] {
             new Item(DEXTERITY_VEST, 10, 20), //
@@ -161,6 +197,5 @@ class GildedRoseTest {
         }
         assertEquals(expectedLog, actualLog);
     }
-
 
 }
