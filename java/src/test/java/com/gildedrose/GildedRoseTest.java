@@ -25,16 +25,16 @@ class GildedRoseTest {
     @Test
     public void goldenMaster() throws IOException {
         Item[] items = new Item[] {
-            new Item("+5 Dexterity Vest", 10, 20), //
-            new Item("Aged Brie", 2, 0), //
-            new Item("Elixir of the Mongoose", 5, 7), //
-            new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-            new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+            new Item(Utils.DEXTERITY_VEST, 10, 20), //
+            new Item(Utils.AGED_BRIE, 2, 0), //
+            new Item(Utils.MONGOOSE_ELIXIR, 5, 7), //
+            new Item(Utils.SULFURAS, 0, 80), //
+            new Item(Utils.SULFURAS, -1, 80),
+            new Item(Utils.BACKSTAGE_PASSES, 15, 20),
+            new Item(Utils.BACKSTAGE_PASSES, 10, 49),
+            new Item(Utils.BACKSTAGE_PASSES, 5, 49),
             // this conjured item does not work properly yet
-            new Item("Conjured Mana Cake", 3, 6) };
+            new Item(Utils.CONJURED_MANA_CAKE, 3, 6) };
 
         GildedRose app = new GildedRose(items);
 
