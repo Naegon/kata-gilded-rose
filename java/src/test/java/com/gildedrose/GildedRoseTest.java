@@ -7,19 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class GildedRoseTest {
 
     @Test
     public void simpleItem() {
         Item foo = new Item("foo", 20, 10);
-        Item[] items = new Item[] { foo  };
+        Item[] items = new Item[] { foo };
         GildedRose gildedRose = new GildedRose(items);
 
         gildedRose.updateQuality();
 
-        assertEquals(19,foo.sellIn);
+        assertEquals(19, foo.sellIn);
         assertEquals(9, foo.quality);
     }
 
@@ -40,7 +39,7 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
 
         int days = 30;
-        List actualLog = new ArrayList<String>();
+        List<String> actualLog = new ArrayList<>();
         for (int i = 0; i <= days; i++) {
             actualLog.add("-------- day " + i + " --------");
             actualLog.add("name, sellIn, quality");
@@ -50,13 +49,12 @@ class GildedRoseTest {
             app.updateQuality();
         }
 
-        List expectedLog = new ArrayList<String>();
+        List<String> expectedLog = new ArrayList<>();
         String workingDir = System.getProperty("user.dir");
         String expectedPath = workingDir + "/../golden-master/expected-output.txt";
         File expectedFile = new File(expectedPath);
         FileReader reader = new FileReader(expectedFile);
         BufferedReader bufferedReader = new BufferedReader(reader);
-        StringBuffer stringBuffer = new StringBuffer();
         String line;
         while ((line = bufferedReader.readLine()) != null) {
             if(! line.isEmpty()) {
