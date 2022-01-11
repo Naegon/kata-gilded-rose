@@ -6,6 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.gildedrose.Utils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GildedRoseTest {
@@ -25,16 +26,16 @@ class GildedRoseTest {
     @Test
     public void goldenMaster() throws IOException {
         Item[] items = new Item[] {
-            new Item(Utils.DEXTERITY_VEST, 10, 20), //
-            new Item(Utils.AGED_BRIE, 2, 0), //
-            new Item(Utils.MONGOOSE_ELIXIR, 5, 7), //
-            new Item(Utils.SULFURAS, 0, 80), //
-            new Item(Utils.SULFURAS, -1, 80),
-            new Item(Utils.BACKSTAGE_PASSES, 15, 20),
-            new Item(Utils.BACKSTAGE_PASSES, 10, 49),
-            new Item(Utils.BACKSTAGE_PASSES, 5, 49),
+            new Item(DEXTERITY_VEST, 10, 20), //
+            new Item(AGED_BRIE, 2, 0), //
+            new Item(MONGOOSE_ELIXIR, 5, 7), //
+            new Item(SULFURAS, 0, 80), //
+            new Item(SULFURAS, -1, 80),
+            new Item(BACKSTAGE_PASSES, 15, 20),
+            new Item(BACKSTAGE_PASSES, 10, 49),
+            new Item(BACKSTAGE_PASSES, 5, 49),
             // this conjured item does not work properly yet
-            new Item(Utils.CONJURED_MANA_CAKE, 3, 6) };
+            new Item(CONJURED_MANA_CAKE, 3, 6) };
 
         GildedRose app = new GildedRose(items);
 
